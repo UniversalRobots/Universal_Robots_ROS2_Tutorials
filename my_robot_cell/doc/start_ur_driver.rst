@@ -79,8 +79,9 @@ With this we could start our workcell using
     ros2 launch ur_robot_driver ur_control.launch.py \
       description_launchfile:=$(ros2 pkg prefix my_robot_cell_control)/share/my_robot_cell_control/launch/rsp.launch.py \
       use_mock_hardware:=true \
-      robot_ip:=123 \ # irrelevant since we use mock hardware
+      robot_ip:=123 \
       ur_type:=ur20 \
+      rviz_config_file:=$(ros2 pkg prefix my_robot_cell_description)/share/my_robot_cell_description/rviz/urdf.rviz \
       tf_prefix:=ur20_
 
 Create start_robot launchfile

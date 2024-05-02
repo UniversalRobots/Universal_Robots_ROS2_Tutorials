@@ -16,8 +16,8 @@
   <xacro:arg name="robot_ip" default="0.0.0.0"/>
   <xacro:arg name="headless_mode" default="false" />
   <xacro:arg name="ur_script_filename" default="$(find ur_client_library)/resources/external_control.urscript"/>
-  <xacro:arg name="ur_output_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_input_recipe.txt"/>
-  <xacro:arg name="ur_input_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_output_recipe.txt"/>
+  <xacro:arg name="ur_output_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_output_recipe.txt"/>
+  <xacro:arg name="ur_input_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_input_recipe.txt"/>
   <xacro:arg name="use_mock_hardware" default="false" />
   <xacro:arg name="mock_sensor_commands" default="false" />
 

@@ -5,6 +5,7 @@ from launch_ros.substitutions import FindPackageShare
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.conditions import IfCondition
 from launch.substitutions import (
     Command,
     FindExecutable,
@@ -43,6 +44,9 @@ def generate_launch_description():
             description="IP address by which the robot can be reached.",
         )
     )
+    declared_arguments.append(
+        DeclareLaunchArgument("launch_rviz", default_value="true", description="Launch RViz?")
+    )
 
     return LaunchDescription(
         declared_arguments
@@ -63,6 +67,13 @@ def generate_launch_description():
                     "ur_type": ur_type,
                     "robot_ip": robot_ip,
                     "tf_prefix": [LaunchConfiguration("ur_type"), "_"],
+                    "rviz_config_file": PathJoinSubstitution(
+                        [
+                            FindPackageShare("my_robot_cell_description"),
+                            "rviz",
+                            "urdf.rviz",
+                        ]
+                    ),
                     "description_launchfile": PathJoinSubstitution(
                         [
                             FindPackageShare("my_robot_cell_control"),
@@ -71,6 +82,6 @@ def generate_launch_description():
                         ]
                     ),
                 }.items(),
-            )
+            ),
         ]
     )

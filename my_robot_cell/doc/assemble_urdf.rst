@@ -99,7 +99,7 @@ We can view our custom workspace by running:
 .. code-block:: bash
 
     #launch rviz
-    ros2 launch my_robot_cell_description view_workspace.launch.py
+    ros2 launch my_robot_cell_description view_robot.launch.py
 
 Use the sliders of the ``joint_state_puplisher_gui`` to move the virtual robot around.
 It should look something like this:
