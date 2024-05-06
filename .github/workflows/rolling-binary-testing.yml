@@ -10,7 +10,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '12 34 * * *'
+    - cron: '34 12 * * *'
 
 jobs:
   rolling_binary_testing:
