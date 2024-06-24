@@ -98,8 +98,8 @@
 
     <!--Creates the 1st Robot-->
     <xacro:ur_robot
-      name="alice_${alice_ur_type}"
-      tf_prefix="alice_${alice_ur_type}_"
+      name="alice"
+      tf_prefix="alice_"
       parent="alice_robot_mount"
       joint_limits_parameters_file="${alice_joint_limits_parameters_file}"
       kinematics_parameters_file="${alice_kinematics_parameters_file}"
@@ -111,8 +111,8 @@
   
     <!--Creates the 2nd Robot-->
     <xacro:ur_robot
-      name="bob_${bob_ur_type}"
-      tf_prefix="bob_${bob_ur_type}_"
+      name="bob"
+      tf_prefix="bob_"
       parent="bob_robot_mount"
       joint_limits_parameters_file="${bob_joint_limits_parameters_file}"
       kinematics_parameters_file="${bob_kinematics_parameters_file}"
