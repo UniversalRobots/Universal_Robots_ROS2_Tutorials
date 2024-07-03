@@ -4,7 +4,8 @@ from pathlib import Path
 import yaml
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, RegisterEventHandler
+from launch.actions import (DeclareLaunchArgument, ExecuteProcess,
+                            RegisterEventHandler)
 from launch.conditions import IfCondition
 from launch.event_handlers import OnProcessExit
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
@@ -51,15 +52,16 @@ def generate_launch_description():
         additional_env={"DISPLAY": ":0"},
     )
 
-    # rviz_config_file = PathJoinSubstitution(
-    #     [FindPackageShare("crm_moveit_config"), "config", "moveit.rviz"]
-    # )
+    rviz_config_file = PathJoinSubstitution(
+        [FindPackageShare("my_dual_robot_cell_moveit_config"), "config", "moveit.rviz"]
+    )
+
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
         name="rviz2_moveit",
         output="log",
-        # arguments=["-d"],
+        arguments=["-d", rviz_config_file],
         parameters=[
             moveit_config.robot_description,
             moveit_config.robot_description_semantic,
