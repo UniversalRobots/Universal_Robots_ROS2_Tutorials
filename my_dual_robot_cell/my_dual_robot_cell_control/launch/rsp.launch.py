@@ -8,7 +8,7 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     alice_ur_type = LaunchConfiguration("alice_ur_type")
-    alice_ur_type = LaunchConfiguration("bob_ur_type")
+    bob_ur_type = LaunchConfiguration("bob_ur_type")
 
     alice_robot_ip = LaunchConfiguration("alice_robot_ip")
     bob_robot_ip = LaunchConfiguration("bob_robot_ip")
@@ -46,10 +46,10 @@ def generate_launch_description():
             bob_robot_ip,
             " ",
             "alice_ur_type:=",
-            ur_type,
+            alice_ur_type,
             " ",
             "bob_ur_type:=",
-            ur_type,
+            bob_ur_type,
             " ",
             "alice_use_mock_hardware:=",
             alice_use_mock_hardware,

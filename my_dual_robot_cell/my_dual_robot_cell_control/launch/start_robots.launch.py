@@ -11,7 +11,7 @@ from launch_ros.substitutions import FindPackageShare
 def launch_setup():
     # Initialize Arguments
     alice_ur_type = LaunchConfiguration("alice_ur_type")
-    alice_ur_type = LaunchConfiguration("bob_ur_type")
+    bob_ur_type = LaunchConfiguration("bob_ur_type")
 
     alice_robot_ip = LaunchConfiguration("alice_robot_ip")
     bob_robot_ip = LaunchConfiguration("bob_robot_ip")
@@ -235,7 +235,8 @@ def launch_setup():
         launch_arguments={
             "alice_robot_ip": alice_robot_ip,
             "bob_robot_ip": bob_robot_ip,
-            "ur_type": alice_ur_type,
+            "alice_ur_type": alice_ur_type,
+            "bob_ur_type": bob_ur_type,
         }.items(),
     )
 
