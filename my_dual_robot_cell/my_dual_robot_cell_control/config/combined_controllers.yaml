@@ -1,0 +1,244 @@
+controller_manager:
+  ros__parameters:
+    alice_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    bob_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    alice_io_and_status_controller:
+      type: ur_controllers/GPIOController
+  
+    bob_io_and_status_controller:
+      type: ur_controllers/GPIOController
+
+    alice_speed_scaling_state_broadcaster:
+      type: ur_controllers/SpeedScalingStateBroadcaster
+    
+    bob_speed_scaling_state_broadcaster:
+      type: ur_controllers/SpeedScalingStateBroadcaster
+
+    alice_force_torque_sensor_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+
+    bob_force_torque_sensor_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+
+    alice_joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+  
+    bob_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    alice_scaled_joint_trajectory_controller:
+      type: ur_controllers/ScaledJointTrajectoryController
+
+    bob_scaled_joint_trajectory_controller:
+      type: ur_controllers/ScaledJointTrajectoryController
+
+    forward_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController
+
+    alice_forward_position_controller:
+      type: position_controllers/JointGroupPositionController
+  
+    bob_forward_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+
+alice_speed_scaling_state_broadcaster:
+  ros__parameters:
+    state_publish_rate: 100.0
+    tf_prefix: "alice_"
+  
+bob_speed_scaling_state_broadcaster:
+  ros__parameters:
+    state_publish_rate: 100.0
+    tf_prefix: "bob_"
+
+alice_io_and_status_controller:
+  ros__parameters:
+    tf_prefix: "alice_"
+
+bob_io_and_status_controller:
+  ros__parameters:
+    tf_prefix: "bob_"
+
+alice_force_torque_sensor_broadcaster:
+  ros__parameters:
+    sensor_name: alice_tcp_fts_sensor
+    state_interface_names:
+      - force.x
+      - force.y
+      - force.z
+      - torque.x
+      - torque.y
+      - torque.z
+    frame_id: bob_tool0
+    topic_name: alice_ft_data
+
+bob_force_torque_sensor_broadcaster:
+  ros__parameters:
+    sensor_name: bob_tcp_fts_sensor
+    state_interface_names:
+      - force.x
+      - force.y
+      - force.z
+      - torque.x
+      - torque.y
+      - torque.z
+    frame_id: bob_tool0
+    topic_name: bob_ft_data
+
+
+alice_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - alice_shoulder_pan_joint
+      - alice_shoulder_lift_joint
+      - alice_elbow_joint
+      - alice_wrist_1_joint
+      - alice_wrist_2_joint
+      - alice_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.2
+      goal_time: 0.0
+      alice_shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_elbow_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+  
+bob_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - bob_shoulder_pan_joint
+      - bob_shoulder_lift_joint
+      - bob_elbow_joint
+      - bob_wrist_1_joint
+      - bob_wrist_2_joint
+      - bob_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.2
+      goal_time: 0.0
+      bob_shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_elbow_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+
+alice_scaled_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - alice_shoulder_pan_joint
+      - alice_shoulder_lift_joint
+      - alice_elbow_joint
+      - alice_wrist_1_joint
+      - alice_wrist_2_joint
+      - alice_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.2
+      goal_time: 0.0
+      alice_shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_elbow_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
+      alice_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+    speed_scaling_interface_name: alice_speed_scaling/speed_scaling_factor
+
+bob_scaled_joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - bob_shoulder_pan_joint
+      - bob_shoulder_lift_joint
+      - bob_elbow_joint
+      - bob_wrist_1_joint
+      - bob_wrist_2_joint
+      - bob_wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.2
+      goal_time: 0.0
+      bob_shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_elbow_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
+      bob_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+    speed_scaling_interface_name: bob_speed_scaling/speed_scaling_factor
+
+alice_forward_velocity_controller:
+  ros__parameters:
+    joints:
+      - alice_shoulder_pan_joint
+      - alice_shoulder_lift_joint
+      - alice_elbow_joint
+      - alice_wrist_1_joint
+      - alice_wrist_2_joint
+      - alice_wrist_3_joint
+    interface_name: velocity
+
+bob_forward_velocity_controller:
+  ros__parameters:
+    joints:
+      - bob_shoulder_pan_joint
+      - bob_shoulder_lift_joint
+      - bob_elbow_joint
+      - bob_wrist_1_joint
+      - bob_wrist_2_joint
+      - bob_wrist_3_joint
+    interface_name: velocity
+
+alice_forward_position_controller:
+  ros__parameters:
+    joints:
+      - alice_shoulder_pan_joint
+      - alice_shoulder_lift_joint
+      - alice_elbow_joint
+      - alice_wrist_1_joint
+      - alice_wrist_2_joint
+      - alice_wrist_3_joint
+
+bob_forward_position_controller:
+  ros__parameters:
+    joints:
+      - bob_shoulder_pan_joint
+      - bob_shoulder_lift_joint
+      - bob_elbow_joint
+      - bob_wrist_1_joint
+      - bob_wrist_2_joint
+      - bob_wrist_3_joint
