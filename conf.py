@@ -51,7 +51,7 @@ extensions = [
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The master toctree document.
 master_doc = "tutorial_index"
@@ -72,12 +72,16 @@ language = "en"
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store",
-                    "**/CHANGELOG.rst", "**/README.rst",
-                    "**/.work", # act temp files
-                    "**/LICENSE.rst",
-                    "venv", # local virtualenv
-                   ]
+exclude_patterns = [
+    "_build",
+    "Thumbs.db",
+    ".DS_Store",
+    "**/CHANGELOG.rst",
+    "**/README.rst",
+    "**/.work",  # act temp files
+    "**/LICENSE.rst",
+    "venv",  # local virtualenv
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -193,7 +197,7 @@ epub_exclude_files = ["search.html"]
 
 
 # -- Extension configuration -------------------------------------------------
-copybutton_exclude = '.linenos, .gp, .go'
+copybutton_exclude = ".linenos, .gp, .go"
 
 # -- Options for todo extension ----------------------------------------------
 
