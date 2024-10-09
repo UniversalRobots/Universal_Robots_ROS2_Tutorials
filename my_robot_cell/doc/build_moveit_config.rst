@@ -6,7 +6,7 @@ At this point, you should be able to run the ``ur_robot_driver`` for your custom
 Now, we are only one last step away from actually planning and executing trajectories.
 
 To utilize MoveIt! 2 for this purpose, which will handle trajectory planning for us, we need to set up a MoveIt! configuration package.
-To create such a **MoveIt! configuration package**, MoveIt! provides a very useful Setup Assistant.
+To create such a MoveIt! `configuration package <https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/tree/main/my_robot_cell/my_robot_cell_moveit_config>`_, MoveIt! provides a very useful Setup Assistant.
 
 Setup Assistant
 ---------------
