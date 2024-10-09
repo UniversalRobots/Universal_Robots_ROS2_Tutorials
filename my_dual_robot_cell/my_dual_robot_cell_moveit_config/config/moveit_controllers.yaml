@@ -1,0 +1,32 @@
+# MoveIt uses this configuration for controller management
+
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - alice_scaled_joint_trajectory_controller
+    - bob_scaled_joint_trajectory_controller
+
+  alice_scaled_joint_trajectory_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - alice_shoulder_pan_joint
+      - alice_shoulder_lift_joint
+      - alice_elbow_joint
+      - alice_wrist_1_joint
+      - alice_wrist_2_joint
+      - alice_wrist_3_joint
+
+  bob_scaled_joint_trajectory_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - bob_shoulder_pan_joint
+      - bob_shoulder_lift_joint
+      - bob_elbow_joint
+      - bob_wrist_1_joint
+      - bob_wrist_2_joint
+      - bob_wrist_3_joint
