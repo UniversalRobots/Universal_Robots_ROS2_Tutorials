@@ -6,7 +6,7 @@ In the last chapter we created a custom scene description containing our robot. 
 that description usable to ``ros2_control`` and hence the ``ur_robot_driver``, we need to add
 control information. We will also add a custom launchfile to startup our demonstrator.
 
-We will generate a new package called ``my_robot_cell_control`` for that purpose.
+We will generate a new package called `my_robot_cell_control <https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/tree/main/my_robot_cell/my_robot_cell_control>`_ for that purpose.
 
 
 Create a description with ros2_control tag
