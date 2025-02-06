@@ -11,9 +11,9 @@
   <!--You could aswell point to ur_description but this way you make sure you use the same files as start_robot.launch.py which searches in runtime_config_package for joint_limits.yaml, physical_parameters.yaml, visual_parameters.yaml and in description_package for default_kinematics.yaml (last one can be overwritten)-->
   <xacro:arg name="ur_type" default="ur20"/>
   <xacro:arg name="joint_limit_params" default="$(find my_robot_cell_control)/config/$(arg ur_type)/joint_limits.yaml"/>
-  <xacro:arg name="kinematics_params_file" default="$(find my_robot_cell_control)/config/$(arg ur_type)/default_kinematics.yaml"/>
-  <xacro:arg name="physical_parameters_file" default="$(find my_robot_cell_control)/config/$(arg ur_type)/physical_parameters.yaml"/>
-  <xacro:arg name="visual_parameters_file" default="$(find my_robot_cell_control)/config/$(arg ur_type)/visual_parameters.yaml"/>
+  <xacro:arg name="kinematics_params" default="$(find my_robot_cell_control)/config/$(arg ur_type)/default_kinematics.yaml"/>
+  <xacro:arg name="physical_params" default="$(find my_robot_cell_control)/config/$(arg ur_type)/physical_parameters.yaml"/>
+  <xacro:arg name="visual_params" default="$(find my_robot_cell_control)/config/$(arg ur_type)/visual_parameters.yaml"/>
 
   <xacro:arg name="robot_ip" default="0.0.0.0"/>
   <xacro:arg name="headless_mode" default="false" />
@@ -25,6 +25,7 @@
   <!--find hash_kinematics in calibration yaml-->
   <xacro:arg name="hash_kinematics" default="calib_4890363623803256388" />
 
+
   <link name="world" />
 
   <!--Create the scene description including the robot-->
@@ -32,12 +33,13 @@
     parent="world"
     ur_type="$(arg ur_type)"
     joint_limits_parameters_file="$(arg joint_limit_params)"
-    kinematics_parameters_file="$(arg kinematics_params_file)"
-    physical_parameters_file="$(arg physical_parameters_file)"
-    visual_parameters_file="$(arg visual_parameters_file)"
+    kinematics_parameters_file="$(arg kinematics_params)"
+    physical_parameters_file="$(arg physical_params)"
+    visual_parameters_file="$(arg visual_params)"
   >
     <origin xyz="0 0 1" rpy="0 0 0" />
   </xacro:my_robot_cell>
+
 
   <!--Create the control tag for the UR robot-->
   <xacro:ur_ros2_control
