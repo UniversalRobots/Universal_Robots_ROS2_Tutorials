@@ -22,9 +22,10 @@
   <xacro:arg name="ur_input_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_input_recipe.txt"/>
   <xacro:arg name="use_fake_hardware" default="false" />
   <xacro:arg name="fake_sensor_commands" default="false" />
-  <!--find hash_kinematics in calibration yaml-->
-  <xacro:arg name="hash_kinematics" default="calib_4890363623803256388" />
-
+  <!--find hash_kinematics in kinematics_params-->
+  <xacro:property name="kinematics_params_file" value="$(arg kinematics_params)"/>
+  <xacro:property name="kinematics_hash" value="${xacro.load_yaml(kinematics_params_file)['kinematics']['hash']}"/>
+ 
 
   <link name="world" />
 
@@ -45,7 +46,7 @@
   <xacro:ur_ros2_control
     name="$(arg ur_type)"
     tf_prefix="$(arg ur_type)_"
-    hash_kinematics="$(arg hash_kinematics)"
+    hash_kinematics="${kinematics_hash}"
     robot_ip="$(arg robot_ip)"
     script_filename="$(arg ur_script_filename)"
     output_recipe_filename="$(arg ur_output_recipe_filename)"
