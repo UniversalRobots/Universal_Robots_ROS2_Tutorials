@@ -8,7 +8,7 @@
 
   <!--We need to specify the arguments used for parametrizing our description-->
   <!--Create a folder for wanted ur_type and copy those files from ur_description package in there; copied only ur20 files -->
-  <!--You could aswell point to ur_description but this way you make sure you use the same files as start_robot.launch.py which searches in runtime_config_package for joint_limits.yaml, physical_parameters.yaml, visual_parameters.yaml and in description_package for default_kinematics.yaml (last one can be overwritten)-->
+  <!--You could as well point to ur_description but this way you make sure you use the same files as start_robot.launch.py which searches in runtime_config_package for joint_limits.yaml, physical_parameters.yaml, visual_parameters.yaml and in description_package for default_kinematics.yaml (last one can be overwritten)-->
   <xacro:arg name="ur_type" default="ur20"/>
   <xacro:arg name="joint_limit_params" default="$(find my_robot_cell_control)/config/$(arg ur_type)/joint_limits.yaml"/>
   <xacro:arg name="kinematics_params" default="$(find my_robot_cell_control)/config/$(arg ur_type)/default_kinematics.yaml"/>
@@ -25,7 +25,7 @@
   <!--find hash_kinematics in kinematics_params-->
   <xacro:property name="kinematics_params_file" value="$(arg kinematics_params)"/>
   <xacro:property name="kinematics_hash" value="${xacro.load_yaml(kinematics_params_file)['kinematics']['hash']}"/>
- 
+
 
   <link name="world" />
 

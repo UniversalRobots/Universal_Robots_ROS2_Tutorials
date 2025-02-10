@@ -139,7 +139,12 @@ def generate_launch_description():
     headless_mode = LaunchConfiguration("headless_mode")
 
     base_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([PathJoinSubstitution([FindPackageShare("ur_robot_driver"),"launch"]), "/ur_control.launch.py"]),
+        PythonLaunchDescriptionSource(
+            [
+                PathJoinSubstitution([FindPackageShare("ur_robot_driver"), "launch"]),
+                "/ur_control.launch.py",
+            ]
+        ),
         launch_arguments={
             "ur_type": ur_type,
             "robot_ip": robot_ip,
