@@ -2,9 +2,11 @@
 name: "Pull Request Docs Check"
 on:
   pull_request:
+    branches:
+      - humble
   push:
     branches:
-      - main
+      - humble
 
 jobs:
   docs:
