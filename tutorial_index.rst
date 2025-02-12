@@ -11,4 +11,4 @@ Example tutorials
 .. toctree::
    :titlesonly:
 
-   ../my_robot_cell/doc/index.rst
+   my_robot_cell/doc/index.rst
