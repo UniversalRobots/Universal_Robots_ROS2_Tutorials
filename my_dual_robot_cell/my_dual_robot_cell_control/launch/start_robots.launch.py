@@ -307,14 +307,14 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "alice_robot_ip",
             default_value="192.168.0.101",
-            description="IP address by which the robot can be reached.",
+            description="IP address by which alice can be reached.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "bob_robot_ip",
             default_value="192.168.0.100",
-            description="IP address by which the robot can be reached.",
+            description="IP address by which bob can be reached.",
         )
     )
 
@@ -351,21 +351,21 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "alice_use_mock_hardware",
             default_value="false",
-            description="Start robot with mock hardware mirroring command to its states.",
+            description="Start alice with mock hardware mirroring command to its states.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "bob_use_mock_hardware",
             default_value="false",
-            description="Start robot with mock hardware mirroring command to its states.",
+            description="Start bob with mock hardware mirroring command to its states.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "alice_mock_sensor_commands",
             default_value="false",
-            description="Enable mock command interfaces for sensors used for simple simulations. "
+            description="Enable mock command interfaces for alice's sensors used for simple simulations. "
             "Used only if 'use_mock_hardware' parameter is true.",
         )
     )
@@ -373,7 +373,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "bob_mock_sensor_commands",
             default_value="false",
-            description="Enable mock command interfaces for sensors used for simple simulations. "
+            description="Enable mock command interfaces for bob's sensors used for simple simulations. "
             "Used only if 'use_mock_hardware' parameter is true.",
         )
     )
