@@ -91,7 +91,7 @@ def generate_launch_description():
                 "ur20",
                 "ur30",
             ],
-            default_value="ur3",
+            default_value="ur3e",
         )
     )
     declared_arguments.append(
@@ -109,7 +109,7 @@ def generate_launch_description():
                 "ur20",
                 "ur30",
             ],
-            default_value="ur3",
+            default_value="ur3e",
         )
     )
     declared_arguments.append(
