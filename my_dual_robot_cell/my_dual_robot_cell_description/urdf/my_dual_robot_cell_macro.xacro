@@ -86,14 +86,14 @@
     <joint name="base_to_alice_robot_mount" type="fixed">
       <parent link="table"/>
       <child link="alice_robot_mount"/>
-      <origin xyz="0.3 0.85 0" rpy="0 0 ${pi}" />
+      <origin xyz="0.5 0.3 0" rpy="0 0 ${pi}" />
     </joint>
   
     <link name="bob_robot_mount"/>
     <joint name="base_to_bob_robot_mount" type="fixed">
       <parent link="table"/>
       <child link="bob_robot_mount"/>
-      <origin xyz="1.0 0.85 0" rpy="0 0 ${pi}" />
+      <origin xyz="1.2 0.3 0" rpy="0 0 ${pi}" />
     </joint>
 
     <!--Creates the 1st Robot-->
