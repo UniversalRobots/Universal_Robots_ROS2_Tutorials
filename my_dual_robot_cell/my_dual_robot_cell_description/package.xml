@@ -8,10 +8,8 @@
   <maintainer email="exner@fzi.de">Felix Exner</maintainer>
 
   <license file="LICENSE">BSD-3-Clause</license>
-  <!-- The UR background wall (meshes/ur_background.jpg)constitutes “Graphical Documentation” the use of which is subject to and governed by our “Terms and Conditions for use of Graphical Documentation”, which can be found here: https://www.universal-robots.com/legal/terms-and-conditions/terms_and_conditions_for_use_of_graphical_documentation.txt -->
-  <license file="UR_LICENSE.txt">Universal Robots A/S’ Terms and Conditions for Use of Graphical Documentation</license>
 
-  <author email="durchdewald@fzi.de">Felix Durchdewald</author>
+  <author email="vihaan.shah@uconn.edu">Vihaan Shah</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <exec_depend>joint_state_publisher</exec_depend>
