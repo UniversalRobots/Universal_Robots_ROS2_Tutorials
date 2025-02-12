@@ -28,13 +28,13 @@
     <link name="table">
       <visual>
         <geometry>
-          <mesh filename="package://my_dual_robot_cell_description/meshes/fzi_table.dae"/>
+          <mesh filename="package://my_robot_cell_description/meshes/fzi_table.dae"/>
         </geometry>
         <origin rpy="0 0 0" xyz="0.75 0.5 -1"/>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://my_dual_robot_cell_description/meshes/fzi_table.dae"/>
+          <mesh filename="package://my_robot_cell_description/meshes/fzi_table.dae"/>
         </geometry>
         <origin rpy="0 0 0" xyz="0.75 0.5 -1"/>
       </collision>
@@ -43,12 +43,12 @@
     <link name="monitor">
       <visual>
         <geometry>
-          <mesh filename="package://my_dual_robot_cell_description/meshes/171005_Motek_Monitor_L.dae"/>
+          <mesh filename="package://my_robot_cell_description/meshes/171005_Motek_Monitor_L.dae"/>
         </geometry>
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://my_dual_robot_cell_description/meshes/171005_Motek_Monitor_L.dae"/>
+          <mesh filename="package://my_robot_cell_description/meshes/171005_Motek_Monitor_L.dae"/>
         </geometry>
       </collision>
     </link>
@@ -65,7 +65,7 @@
     <link name="wall">
       <visual>
         <geometry>
-          <mesh filename="package://my_dual_robot_cell_description/meshes/wall.dae"/>
+          <mesh filename="package://my_robot_cell_description/meshes/wall.dae"/>
         </geometry>
       </visual>
       <collision>
