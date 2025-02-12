@@ -3,12 +3,15 @@
 <package format="3">
   <name>my_dual_robot_cell_control</name>
   <version>1.0.0</version>
+
   <description>ros2_control setup</description>
+
+  <author email="vihaan.shah@uconn.edu">Vihaan Shah</author>
   <maintainer email="Durchdewald@fzi.de">Felix Durchdewald</maintainer>
   <license file="LICENSE">BSD-3-Clause</license>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
 
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
   <exec_depend>joint_state_broadcaster</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
