@@ -103,10 +103,13 @@ def launch_setup():
             {"joint_controller_active": alice_activate_joint_controller},
             {
                 "consistent_controllers": [
+                    "joint_state_broadcaster",
                     "alice_io_and_status_controller",
+                    "bob_io_and_status_controller",
                     "alice_force_torque_sensor_broadcaster",
-                    "alice_joint_state_broadcaster",
+                    "bob_force_torque_sensor_broadcaster",
                     "alice_speed_scaling_state_broadcaster",
+                    "bob_speed_scaling_state_broadcaster",
                 ]
             },
         ],
@@ -125,9 +128,12 @@ def launch_setup():
             {"joint_controller_active": bob_activate_joint_controller},
             {
                 "consistent_controllers": [
+                    "joint_state_broadcaster",
+                    "alice_io_and_status_controller",
                     "bob_io_and_status_controller",
+                    "alice_force_torque_sensor_broadcaster",
                     "bob_force_torque_sensor_broadcaster",
-                    "bob_joint_state_broadcaster",
+                    "alice_speed_scaling_state_broadcaster",
                     "bob_speed_scaling_state_broadcaster",
                 ]
             },
@@ -160,8 +166,7 @@ def launch_setup():
         )
 
     controllers_active = [
-        "alice_joint_state_broadcaster",
-        "bob_joint_state_broadcaster",
+        "joint_state_broadcaster",
         "alice_io_and_status_controller",
         "bob_io_and_status_controller",
         "alice_speed_scaling_state_broadcaster",
