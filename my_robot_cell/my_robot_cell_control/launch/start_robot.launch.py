@@ -56,20 +56,6 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument(
-            "runtime_config_package",
-            default_value="my_robot_cell_control",
-            description="package in which .yaml are",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "controllers_file",
-            default_value="ros2_controllers.yaml",
-            description="name of controllers .yaml",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
             "description_package",
             default_value="my_robot_cell_control",
             description="description package",
@@ -87,7 +73,7 @@ def generate_launch_description():
             "kinematics_params_file",
             default_value=PathJoinSubstitution(
                 [
-                    FindPackageShare(LaunchConfiguration("runtime_config_package")),
+                    FindPackageShare("my_robot_cell_control"),
                     "config",
                     "my_robot_calibration.yaml",
                 ]
@@ -129,7 +115,6 @@ def generate_launch_description():
     launch_rviz = LaunchConfiguration("launch_rviz")
     use_fake_hardware = LaunchConfiguration("use_fake_hardware")
     fake_sensor_commands = LaunchConfiguration("fake_sensor_commands")
-    runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
     description_package = LaunchConfiguration("description_package")
     description_file = LaunchConfiguration("description_file")
@@ -152,8 +137,6 @@ def generate_launch_description():
             "launch_rviz": launch_rviz,
             "use_fake_hardware": use_fake_hardware,
             "fake_sensor_commands": fake_sensor_commands,
-            "runtime_config_package": runtime_config_package,
-            "controllers_file": controllers_file,
             "description_package": description_package,
             "description_file": description_file,
             "kinematics_params_file": kinematics_params_file,
