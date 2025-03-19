@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<robot name="my_dual_robot_cell" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!--First, include the macro from our custom description-->
+  <xacro:include
+    filename="$(find my_dual_robot_cell_description)/urdf/my_dual_robot_cell_macro.xacro" />
+  <!--The driver already provides a control tag for the UR arm, we can directly include-->
+  <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro" />
+
+  <!--We need to specify the arguments used for parametrizing our description-->
+  <xacro:arg name="alice_ur_type" default="ur3e" />
+  <xacro:arg name="alice_joint_limits_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/joint_limits.yaml" />
+  <xacro:arg name="alice_kinematics_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/default_kinematics.yaml" />
+  <xacro:arg name="alice_physical_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/physical_parameters.yaml" />
+  <xacro:arg name="alice_visual_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/visual_parameters.yaml" />
+
+  <xacro:arg name="bob_ur_type" default="ur3e" />
+  <xacro:arg name="bob_joint_limits_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/joint_limits.yaml" />
+  <xacro:arg name="bob_kinematics_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/default_kinematics.yaml" />
+  <xacro:arg name="bob_physical_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/physical_parameters.yaml" />
+  <xacro:arg name="bob_visual_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/visual_parameters.yaml" />
+
+  <xacro:arg name="alice_use_mock_hardware" default="false" />
+  <xacro:arg name="alice_mock_sensor_commands" default="false" />
+  <xacro:arg name="alice_robot_ip" default="192.168.0.101" />
+  <xacro:arg name="alice_reverse_port" default="50006" />
+  <xacro:arg name="alice_script_sender_port" default="50007" />
+  <xacro:arg name="alice_script_command_port" default="50010" />
+  <xacro:arg name="alice_trajectory_port" default="50009" />
+
+  <xacro:arg name="bob_use_mock_hardware" default="false" />
+  <xacro:arg name="bob_mock_sensor_commands" default="false" />
+  <xacro:arg name="bob_robot_ip" default="192.168.0.100" />
+  <xacro:arg name="bob_reverse_port" default="50001" />
+  <xacro:arg name="bob_script_sender_port" default="50002" />
+  <xacro:arg name="bob_script_command_port" default="50004" />
+  <xacro:arg name="bob_trajectory_port" default="50003" />
+
+  <xacro:arg name="headless_mode" default="false" />
+  <xacro:arg name="ur_script_filename" default="$(find ur_client_library)/resources/external_control.urscript" />
+  <xacro:arg name="ur_output_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_output_recipe.txt" />
+  <xacro:arg name="ur_input_recipe_filename" default="$(find ur_robot_driver)/resources/rtde_input_recipe.txt" />
+
+
+  <link name="world" />
+
+  <xacro:my_dual_robot_cell
+    parent="world"
+    alice_ur_type="$(arg alice_ur_type)"
+    alice_joint_limits_parameters_file="$(arg alice_joint_limits_parameters_file)"
+    alice_kinematics_parameters_file="$(arg alice_kinematics_parameters_file)"
+    alice_physical_parameters_file="$(arg alice_physical_parameters_file)"
+    alice_visual_parameters_file="$(arg alice_visual_parameters_file)"
+    bob_ur_type="$(arg bob_ur_type)"
+    bob_joint_limits_parameters_file="$(arg bob_joint_limits_parameters_file)"
+    bob_kinematics_parameters_file="$(arg bob_kinematics_parameters_file)"
+    bob_physical_parameters_file="$(arg bob_physical_parameters_file)"
+    bob_visual_parameters_file="$(arg bob_visual_parameters_file)"
+  >
+    <origin xyz="0 0 1" rpy="0 0 0" />
+  </xacro:my_dual_robot_cell>
+
+  <xacro:ur_ros2_control
+    name="alice"
+    tf_prefix="alice_"
+    kinematics_parameters_file="$(arg alice_kinematics_parameters_file)"
+    robot_ip="$(arg alice_robot_ip)"
+    script_filename="$(arg ur_script_filename)"
+    output_recipe_filename="$(arg ur_output_recipe_filename)"
+    input_recipe_filename="$(arg ur_input_recipe_filename)"
+    use_mock_hardware="$(arg alice_use_mock_hardware)"
+    mock_sensor_commands="$(arg alice_mock_sensor_commands)"
+    headless_mode="$(arg headless_mode)"
+    reverse_port="$(arg alice_reverse_port)"
+    script_sender_port="$(arg alice_script_sender_port)"
+    script_command_port="$(arg alice_script_command_port)"
+    trajectory_port="$(arg alice_trajectory_port)"
+  />
+
+  <xacro:ur_ros2_control
+    name="bob"
+    tf_prefix="bob_"
+    kinematics_parameters_file="$(arg bob_kinematics_parameters_file)"
+    robot_ip="$(arg bob_robot_ip)"
+    script_filename="$(arg ur_script_filename)"
+    output_recipe_filename="$(arg ur_output_recipe_filename)"
+    input_recipe_filename="$(arg ur_input_recipe_filename)"
+    use_mock_hardware="$(arg bob_use_mock_hardware)"
+    mock_sensor_commands="$(arg bob_mock_sensor_commands)"
+    headless_mode="$(arg headless_mode)"
+    reverse_port="$(arg bob_reverse_port)"
+    script_sender_port="$(arg bob_script_sender_port)"
+    script_command_port="$(arg bob_script_command_port)"
+    trajectory_port="$(arg bob_trajectory_port)"
+  />
+
+</robot>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>my_dual_robot_cell_description</name>
+  <version>1.0.0</version>
+
+  <description>This package contains an urdf of a shared workspace.</description>
+  <maintainer email="exner@fzi.de">Felix Exner</maintainer>
+
+  <license file="LICENSE">BSD-3-Clause</license>
+
+  <author email="vihaan.shah@uconn.edu">Vihaan Shah</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>ur_description</exec_depend>
+  <exec_depend>ur_robot_driver</exec_depend>
+  <exec_depend>my_robot_cell_description</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

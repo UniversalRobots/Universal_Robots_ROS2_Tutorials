@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot name="my_dual_robot_cell" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find my_dual_robot_cell_description)/urdf/my_dual_robot_cell_macro.xacro"/>
+
+  <xacro:arg name="alice_ur_type" default="ur3e"/>
+  <xacro:arg name="alice_joint_limits_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/joint_limits.yaml"/>
+  <xacro:arg name="alice_kinematics_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/default_kinematics.yaml"/>
+  <xacro:arg name="alice_physical_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/physical_parameters.yaml"/>
+  <xacro:arg name="alice_visual_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/visual_parameters.yaml"/>
+
+  <xacro:arg name="bob_ur_type" default="ur3e"/>
+  <xacro:arg name="bob_joint_limits_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/joint_limits.yaml"/>
+  <xacro:arg name="bob_kinematics_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/default_kinematics.yaml"/>
+  <xacro:arg name="bob_physical_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/physical_parameters.yaml"/>
+  <xacro:arg name="bob_visual_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/visual_parameters.yaml"/>
+
+  <link name="world"/>
+  <!--This will create the scene where the robots are located in-->
+  <xacro:my_dual_robot_cell
+    parent="world"
+    
+    alice_ur_type="$(arg alice_ur_type)"
+    alice_joint_limits_parameters_file="$(arg alice_joint_limits_parameters_file)"
+    alice_kinematics_parameters_file="$(arg alice_kinematics_parameters_file)"
+    alice_physical_parameters_file="$(arg alice_physical_parameters_file)"
+    alice_visual_parameters_file="$(arg alice_visual_parameters_file)"
+
+    bob_ur_type="$(arg bob_ur_type)"
+    bob_joint_limits_parameters_file="$(arg bob_joint_limits_parameters_file)"
+    bob_kinematics_parameters_file="$(arg bob_kinematics_parameters_file)"
+    bob_physical_parameters_file="$(arg bob_physical_parameters_file)"
+    bob_visual_parameters_file="$(arg bob_visual_parameters_file)"
+    >
+      <origin xyz="0 0 1" rpy="0 0 0" />
+  </xacro:my_dual_robot_cell>
+
+</robot>
