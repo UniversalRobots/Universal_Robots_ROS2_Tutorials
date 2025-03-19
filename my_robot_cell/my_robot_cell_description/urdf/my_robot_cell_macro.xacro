@@ -89,6 +89,7 @@
       kinematics_parameters_file="${kinematics_parameters_file}"
       physical_parameters_file="${physical_parameters_file}"
       visual_parameters_file="${visual_parameters_file}"
+      generate_ros2_control_tag="false"
     >
       <origin xyz="0 0 0" rpy="0 0 0" />
     </xacro:ur_robot>

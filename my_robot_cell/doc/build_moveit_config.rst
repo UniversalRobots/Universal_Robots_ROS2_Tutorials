@@ -129,7 +129,7 @@ First, we need to start a robot, simulated or real. If you start a real robot, m
 .. code-block:: bash
 
    # You can switch to real hardware if you prefer
-   ros2 launch my_robot_cell_control start_robot.launch.py use_mock_hardware:=true
+   ros2 launch my_robot_cell_control start_robot.launch.py use_fake_hardware:=true
 
 
 Second, we can start the move_group node by running the launch file the setup assistant created for us:

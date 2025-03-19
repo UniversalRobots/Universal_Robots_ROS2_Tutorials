@@ -23,8 +23,8 @@ This URDF is very similar to the one we have already assembled. We simply need t
 
 .. literalinclude:: ../my_robot_cell_control/urdf/my_robot_cell_controlled.urdf.xacro
     :language: xml
-    :start-at:   <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro"/>
-    :end-at:   <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro"/>
+    :start-at:   <xacro:include filename="$(find ur_description)/urdf/ur.ros2_control.xacro"/>
+    :end-at:   <xacro:include filename="$(find ur_description)/urdf/ur.ros2_control.xacro"/>
     :caption: my_robot_cell_control/urdf/my_robot_cell_controlled.urdf.xacro
 
 
@@ -33,7 +33,7 @@ define the necessary arguments that need to be passed to the macro,
 .. literalinclude:: ../my_robot_cell_control/urdf/my_robot_cell_controlled.urdf.xacro
     :language: xml
     :start-at: <xacro:arg name="robot_ip" default="0.0.0.0"/>
-    :end-at: <xacro:arg name="mock_sensor_commands" default="false" />
+    :end-at: <xacro:arg name="fake_sensor_commands" default="false" />
     :caption: my_robot_cell_control/urdf/my_robot_cell_controlled.urdf.xacro
 
 
@@ -57,39 +57,12 @@ For now, we just copy the default one for the ur20.
    cp $(ros2 pkg prefix ur_description)/share/ur_description/config/ur20/default_kinematics.yaml \
      my_robot_cell_control/config/my_robot_calibration.yaml
 
-
-Create robot_state_publisher launchfile
----------------------------------------
-
-To use the custom controlled description, we need to generate a launchfile loading that description
-(Since it contains less / potentially different) arguments than the "default" one. In that
-launchfile we need to start a ``robot_state_publisher`` (RSP) node that will get the description as a
-parameter and redistribute it via the ``robot_description`` topic:
-
-.. literalinclude:: ../my_robot_cell_control/launch/rsp.launch.py
-    :language: py
-    :start-after: # Author: Felix Exner
-    :linenos:
-    :caption: my_robot_cell_control/launch/rsp.launch.py
-
-With this we could start our workcell using
-
-.. code-block:: bash
-
-    ros2 launch ur_robot_driver ur_control.launch.py \
-      description_launchfile:=$(ros2 pkg prefix my_robot_cell_control)/share/my_robot_cell_control/launch/rsp.launch.py \
-      use_mock_hardware:=true \
-      robot_ip:=123 \
-      ur_type:=ur20 \
-      rviz_config_file:=$(ros2 pkg prefix my_robot_cell_description)/share/my_robot_cell_description/rviz/urdf.rviz \
-      tf_prefix:=ur20_
-
 Create start_robot launchfile
 -----------------------------
 
-Since the command above is obviously not very convenient to start our robot, we wrap that into another
-launchfile that includes the ``ur_control.launch.py`` launchfile with the correct description
-launchfile and prefix:
+To launch a controlled robot with our custom description, we need to generate a launchfile. We
+include the ``ur_control.launch.py`` file from the driver and set its parameters to match our
+custom workcell.
 
 .. literalinclude:: ../my_robot_cell_control/launch/start_robot.launch.py
     :language: py
@@ -100,7 +73,7 @@ With that we can start the robot using
 
 .. code-block:: bash
 
-   ros2 launch my_robot_cell_control start_robot.launch.py use_mock_hardware:=true
+   ros2 launch my_robot_cell_control start_robot.launch.py use_fake_hardware:=true
 
 Testing everything
 ------------------
@@ -121,7 +94,7 @@ We can start the system in a mocked simulation
 .. code-block:: bash
 
     #start the driver with mocked hardware
-    ros2 launch my_robot_cell_control start_robot.launch.py use_mock_hardware:=true
+    ros2 launch my_robot_cell_control start_robot.launch.py use_fake_hardware:=true
 
 Or to use it with a real robot:
 

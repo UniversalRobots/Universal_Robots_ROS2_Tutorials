@@ -8,6 +8,7 @@ repos:
       - id: check-merge-conflict
       - id: check-symlinks
       - id: check-yaml
+        args: ['--unsafe']
       - id: end-of-file-fixer
       - id: mixed-line-ending
       - id: trailing-whitespace
