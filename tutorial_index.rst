@@ -1,3 +1,5 @@
+:github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/blob/main/tutorial_index.rst
+
 ##############################
 Universal Robots ROS tutorials
 ##############################
