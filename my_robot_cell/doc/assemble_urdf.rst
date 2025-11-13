@@ -1,3 +1,5 @@
+:github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/blob/main/my_robot_cell/doc/assemble_urdf.rst
+
 Assembling the URDF
 ===================
 
@@ -57,7 +59,7 @@ The workcell macro is defined in the following manner:
 .. literalinclude:: ../my_robot_cell_description/urdf/my_robot_cell_macro.xacro
     :language: xml
     :linenos:
-    :caption: my_robot_cell_description/urdf/my_robot_cell_macro.urdf.xacro
+    :caption: my_robot_cell_description/urdf/my_robot_cell_macro.xacro
 
 This macro provides an example of what a custom workcell could resemble. Your workspace will likely
 vary from this one. Please feel free to modify this portion of the URDF to match your own setup. In
@@ -72,7 +74,7 @@ macro. In this example, we chose to create a link named **robot_mount**.
     :start-at: <link name="robot_mount"/>
     :end-at: </joint>
     :linenos:
-    :caption: my_robot_cell_description/urdf/my_robot_cell.urdf.xacro
+    :caption: my_robot_cell_description/urdf/my_robot_cell_macro.xacro
 
 After that we are finally able to actually **create the robot arm** by calling the macro.
 
@@ -81,7 +83,7 @@ After that we are finally able to actually **create the robot arm** by calling t
     :start-at:   <xacro:ur_robot
     :end-at:   </xacro:ur_robot>
     :linenos:
-    :caption: my_robot_cell_description/urdf/my_robot_cell.urdf.xacro
+    :caption: my_robot_cell_description/urdf/my_robot_cell_macro.xacro
 
 Note that the **origin** argument is transmitted in a different manner than the other arguments.
 

@@ -1,3 +1,5 @@
+:github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/blob/main/my_robot_cell/doc/index.rst
+
 .. _custom_workcell_tutorial:
 
 ================

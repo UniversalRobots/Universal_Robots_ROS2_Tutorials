@@ -1,3 +1,5 @@
+:github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/blob/main/my_robot_cell/doc/start_ur_driver.rst
+
 =========================
 Start the ur_robot_driver
 =========================
@@ -129,3 +131,15 @@ Or to use it with a real robot:
 
     #start the driver with real hardware
     ros2 launch my_robot_cell_control start_robot.launch.py
+
+.. note::
+   We extracted the calibration information from the robot and saved it in the
+   ``my_robot_cell_control`` package. If you have a different robot, you need to extract the
+   calibration information from that, and pass that to the launch file. Changing the ``ur_type``
+   parameter only will lead to a wrong model, as it will still be using the example kinematics from
+   a UR20. To use a UR5e, for example, you can do
+
+   .. code-block:: bash
+
+      ros2 launch my_robot_cell_control start_robot.launch.py ur_type:=ur5e use_mock_hardware:=true \
+        kinematics_parameters_file:=$(ros2 pkg prefix ur_description)/share/ur_description/config/ur5e/default_kinematics.yaml
