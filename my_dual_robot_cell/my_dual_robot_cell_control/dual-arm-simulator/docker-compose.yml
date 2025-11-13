@@ -6,7 +6,7 @@ services:
       ursim_net_dual_arm:
         ipv4_address: 192.168.57.101
     environment:
-      ROBOT_MODEL: "UR3e"
+      ROBOT_MODEL: "UR3"
     volumes:
       - ./persistent_storage_alice/programs:/ursim/programs
       - ./persistent_storage_alice/urcaps:/urcaps
@@ -16,7 +16,7 @@ services:
       ursim_net_dual_arm:
         ipv4_address: 192.168.57.100
     environment:
-      ROBOT_MODEL: "UR3e"
+      ROBOT_MODEL: "UR5"
     volumes:
       - ./persistent_storage_bob/programs:/ursim/programs
       - ./persistent_storage_bob/urcaps:/urcaps

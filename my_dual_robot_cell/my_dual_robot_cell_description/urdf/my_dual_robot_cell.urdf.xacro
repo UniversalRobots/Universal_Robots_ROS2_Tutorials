@@ -9,7 +9,7 @@
   <xacro:arg name="alice_physical_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/physical_parameters.yaml"/>
   <xacro:arg name="alice_visual_parameters_file" default="$(find ur_description)/config/$(arg alice_ur_type)/visual_parameters.yaml"/>
 
-  <xacro:arg name="bob_ur_type" default="ur3e"/>
+  <xacro:arg name="bob_ur_type" default="ur5e"/>
   <xacro:arg name="bob_joint_limits_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/joint_limits.yaml"/>
   <xacro:arg name="bob_kinematics_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/default_kinematics.yaml"/>
   <xacro:arg name="bob_physical_parameters_file" default="$(find ur_description)/config/$(arg bob_ur_type)/physical_parameters.yaml"/>
@@ -19,7 +19,7 @@
   <!--This will create the scene where the robots are located in-->
   <xacro:my_dual_robot_cell
     parent="world"
-    
+
     alice_ur_type="$(arg alice_ur_type)"
     alice_joint_limits_parameters_file="$(arg alice_joint_limits_parameters_file)"
     alice_kinematics_parameters_file="$(arg alice_kinematics_parameters_file)"
