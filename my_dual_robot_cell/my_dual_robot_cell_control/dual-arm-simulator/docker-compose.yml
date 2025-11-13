@@ -1,0 +1,29 @@
+---
+services:
+  alice:
+    image: "universalrobots/ursim_e-series"
+    networks:
+      ursim_net_dual_arm:
+        ipv4_address: 192.168.57.101
+    environment:
+      ROBOT_MODEL: "UR3e"
+    volumes:
+      - ./persistent_storage_alice/programs:/ursim/programs
+      - ./persistent_storage_alice/urcaps:/urcaps
+  bob:
+    image: "universalrobots/ursim_e-series"
+    networks:
+      ursim_net_dual_arm:
+        ipv4_address: 192.168.57.100
+    environment:
+      ROBOT_MODEL: "UR3e"
+    volumes:
+      - ./persistent_storage_bob/programs:/ursim/programs
+      - ./persistent_storage_bob/urcaps:/urcaps
+
+networks:
+  ursim_net_dual_arm:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.57.0/24
