@@ -22,7 +22,7 @@
 
   <xacro:arg name="alice_use_mock_hardware" default="false" />
   <xacro:arg name="alice_mock_sensor_commands" default="false" />
-  <xacro:arg name="alice_robot_ip" default="192.168.0.101" />
+  <xacro:arg name="alice_robot_ip" default="192.168.57.101" />
   <xacro:arg name="alice_reverse_port" default="50006" />
   <xacro:arg name="alice_script_sender_port" default="50007" />
   <xacro:arg name="alice_script_command_port" default="50010" />
@@ -30,7 +30,7 @@
 
   <xacro:arg name="bob_use_mock_hardware" default="false" />
   <xacro:arg name="bob_mock_sensor_commands" default="false" />
-  <xacro:arg name="bob_robot_ip" default="192.168.0.100" />
+  <xacro:arg name="bob_robot_ip" default="192.168.57.100" />
   <xacro:arg name="bob_reverse_port" default="50001" />
   <xacro:arg name="bob_script_sender_port" default="50002" />
   <xacro:arg name="bob_script_command_port" default="50004" />

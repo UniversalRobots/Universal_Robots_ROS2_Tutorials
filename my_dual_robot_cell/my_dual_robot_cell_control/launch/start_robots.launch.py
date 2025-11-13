@@ -52,7 +52,8 @@ def launch_setup():
 
     alice_dashboard_client_node = Node(
         package="ur_robot_driver",
-        condition=IfCondition(alice_launch_dashboard_client) and UnlessCondition(alice_use_mock_hardware),
+        condition=IfCondition(alice_launch_dashboard_client)
+        and UnlessCondition(alice_use_mock_hardware),
         executable="dashboard_client",
         name="dashboard_client",
         namespace="alice",
@@ -63,7 +64,8 @@ def launch_setup():
 
     bob_dashboard_client_node = Node(
         package="ur_robot_driver",
-        condition=IfCondition(bob_launch_dashboard_client) and UnlessCondition(bob_use_mock_hardware),
+        condition=IfCondition(bob_launch_dashboard_client)
+        and UnlessCondition(bob_use_mock_hardware),
         executable="dashboard_client",
         name="dashboard_client",
         namespace="bob",
@@ -306,14 +308,14 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "alice_robot_ip",
-            default_value="192.168.0.101",
+            default_value="192.168.57.101",
             description="IP address by which alice can be reached.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "bob_robot_ip",
-            default_value="192.168.0.100",
+            default_value="192.168.57.100",
             description="IP address by which bob can be reached.",
         )
     )
@@ -420,9 +422,7 @@ def generate_launch_description():
         )
     )
     declared_arguments.append(
-        DeclareLaunchArgument(
-            "launch_rviz", default_value="true", description="Launch RViz?"
-        )
+        DeclareLaunchArgument("launch_rviz", default_value="true", description="Launch RViz?")
     )
     declared_arguments.append(
         DeclareLaunchArgument(
