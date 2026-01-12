@@ -109,5 +109,5 @@ We can view our custom workspace by running:
 Use the sliders of the ``joint_state_puplisher_gui`` to move the virtual robots around.
 It should look something like this:
 
-.. image:: rviz.png
+.. image:: figures/rviz.png
     :alt: RViz window showing the custom workspace

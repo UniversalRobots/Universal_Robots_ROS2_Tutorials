@@ -25,7 +25,7 @@ Although the Setup Assistant is very straightforward, there are some tips and tr
 
 The first task the MoveIt! Setup Assistant asks us to do is to load the URDF with the optional xacro arguments. If you would like to change the ``ur_type`` for example, you could also specify that here. For this demonstration we'll go with our description's default values.
 
-.. image:: load_urdf.png
+.. image:: figures/load_urdf.png
    :alt: Load a URDF
 
 Next, make sure that the generated **self-collisions** are detected correctly. In our example the robot
@@ -33,7 +33,7 @@ is positioned on the table in such a way, that it collides with the monitor on t
 joints are in the 0 position. Hence, the collision is allowed as "Collision by default". We remove
 that tick, since we don't want that collision to be ignored.
 
-.. image:: self_collisions.png
+.. image:: figures/self_collisions.png
    :alt: Adjust self-collisions - Remove the tick for the collision between monitor and ur20_upper_arm_link.
 
 
@@ -41,15 +41,15 @@ We skip adding virtual joints for now and continue with our **planning group(s)*
 We add a planning group called **ur_arm**. A reasonable and error-resistant approach is to define
 it as a kinematic chain in the following manner:
 
-.. image:: planning_group_kinematics.png
+.. image:: figures/planning_group_kinematics.png
    :alt: Kinematic setup for our planning group
 
-.. image:: planning_group_chain.png
+.. image:: figures/planning_group_chain.png
    :alt: Kinematic Chain
 
 Your planning groups should look something like this:
 
-.. image:: planning_groups.png
+.. image:: figures/planning_groups.png
    :alt: Planning Groups
 
 We'll skip setting up ros2_control related points, since we've already configured that in our
@@ -58,7 +58,7 @@ control package.
 In the **MoveIt Controllers** step we setup our desired controller to match the name
 "scaled_joint_trajectory_controller":
 
-.. image:: moveit_controllers.png
+.. image:: figures/moveit_controllers.png
    :alt: MoveIt! coontrollers configuration
 
 We skip **perception** as we don't have any cameras setup in our scenario.
@@ -69,13 +69,13 @@ are for starting a demo using mock hardware, which would basically be a duplicat
 already did in our control package. Since we also do not use the Warehouse feature for now, we also
 skip that file.
 
-.. image:: launch_files.png
+.. image:: figures/launch_files.png
    :alt: Select the launch files to be generated
 
 After the **Author information** we select which configuration files to generate. Again, we strip
 down all the files needed for mock hardware startup.
 
-.. image:: config_files.png
+.. image:: figures/config_files.png
    :alt: Select the config files to be generated
 
 With all the information entered, you can **generate** the package and close the setup assistant.
