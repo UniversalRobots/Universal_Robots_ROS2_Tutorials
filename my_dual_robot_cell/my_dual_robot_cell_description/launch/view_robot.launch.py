@@ -19,10 +19,10 @@ def generate_launch_description():
                 description_file,
                 " ",
                 "alice_ur_type:=",
-                "ur3",
+                "ur3e",
                 " ",
                 "bob_ur_type:=",
-                "ur3",
+                "ur5e",
             ]
         ),
         value_type=str,
