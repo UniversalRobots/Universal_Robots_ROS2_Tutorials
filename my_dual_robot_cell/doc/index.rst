@@ -2,9 +2,9 @@
 
 .. _dual_arm_tutorial:
 
-================
+===================
 Dual robot arm cell
-================
+===================
 
 Example about integrating two UR arms into a custom workspace. We will build a custom workcell
 description containing two robot arms, start the driver and create a MoveIt config to enable trajectory planning with MoveIt.
