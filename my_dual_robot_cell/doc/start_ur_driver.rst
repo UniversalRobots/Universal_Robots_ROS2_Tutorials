@@ -25,7 +25,7 @@ This URDF is very similar to the one we have already assembled. We simply need t
 .. literalinclude:: ../my_dual_robot_cell_control/urdf/my_dual_robot_cell_controlled.urdf.xacro
     :language: xml
     :start-at:   <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro" />
-    :end-at:   <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro"/>
+    :end-at:   <xacro:include filename="$(find ur_robot_driver)/urdf/ur.ros2_control.xacro" />
     :caption: my_dual_robot_cell_control/urdf/my_dual_robot_cell_controlled.urdf.xacro
 
 define the necessary arguments that need to be passed to the macro,
