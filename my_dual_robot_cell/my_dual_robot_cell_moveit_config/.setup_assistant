@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: my_dual_robot_cell_description
+    relative_path: urdf/my_dual_robot_cell.urdf.xacro
+  srdf:
+    relative_path: config/my_dual_robot_cell.srdf
+  package_settings:
+    author_name: Vihaan Shah
+    author_email: vihaan.shah@uconn.edu
+    generated_timestamp: 1719324402

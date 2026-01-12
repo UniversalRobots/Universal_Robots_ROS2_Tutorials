@@ -1,0 +1,358 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 87
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /RobotModel1
+        - /TF1
+        - /TF1/Tree1
+      Splitter Ratio: 0.5
+    Tree Height: 398
+  - Class: rviz_common/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        alice_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        alice_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        alice_base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        alice_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        alice_forearm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        alice_ft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        alice_robot_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        alice_shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        alice_tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        alice_upper_arm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        alice_wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        alice_wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        alice_wrist_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        bob_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        bob_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        bob_base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        bob_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        bob_forearm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        bob_ft_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        bob_robot_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        bob_shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        bob_tool0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        bob_upper_arm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        bob_wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        bob_wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        bob_wrist_3_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        monitor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        table:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wall:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        world:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        alice_base:
+          Value: true
+        alice_base_link:
+          Value: true
+        alice_base_link_inertia:
+          Value: true
+        alice_flange:
+          Value: true
+        alice_forearm_link:
+          Value: true
+        alice_ft_frame:
+          Value: true
+        alice_robot_mount:
+          Value: true
+        alice_shoulder_link:
+          Value: true
+        alice_tool0:
+          Value: true
+        alice_upper_arm_link:
+          Value: true
+        alice_wrist_1_link:
+          Value: true
+        alice_wrist_2_link:
+          Value: true
+        alice_wrist_3_link:
+          Value: true
+        bob_base:
+          Value: true
+        bob_base_link:
+          Value: true
+        bob_base_link_inertia:
+          Value: true
+        bob_flange:
+          Value: true
+        bob_forearm_link:
+          Value: true
+        bob_ft_frame:
+          Value: true
+        bob_robot_mount:
+          Value: true
+        bob_shoulder_link:
+          Value: true
+        bob_tool0:
+          Value: true
+        bob_upper_arm_link:
+          Value: true
+        bob_wrist_1_link:
+          Value: true
+        bob_wrist_2_link:
+          Value: true
+        bob_wrist_3_link:
+          Value: true
+        monitor:
+          Value: true
+        table:
+          Value: true
+        wall:
+          Value: true
+        world:
+          Value: true
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        world:
+          table:
+            alice_robot_mount:
+              alice_base_link:
+                alice_base:
+                  {}
+                alice_base_link_inertia:
+                  alice_shoulder_link:
+                    alice_upper_arm_link:
+                      alice_forearm_link:
+                        alice_wrist_1_link:
+                          alice_wrist_2_link:
+                            alice_wrist_3_link:
+                              alice_flange:
+                                alice_tool0:
+                                  {}
+                              alice_ft_frame:
+                                {}
+            bob_robot_mount:
+              bob_base_link:
+                bob_base:
+                  {}
+                bob_base_link_inertia:
+                  bob_shoulder_link:
+                    bob_upper_arm_link:
+                      bob_forearm_link:
+                        bob_wrist_1_link:
+                          bob_wrist_2_link:
+                            bob_wrist_3_link:
+                              bob_flange:
+                                bob_tool0:
+                                  {}
+                              bob_ft_frame:
+                                {}
+            monitor:
+              {}
+            wall:
+              {}
+      Update Interval: 0
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: world
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/MoveCamera
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 4.675174713134766
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0.9431386590003967
+        Y: 0.6480544209480286
+        Z: 1.3101682662963867
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.49500054121017456
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 4.259994983673096
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1016
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd0000000100000000000001ad0000039efc0200000002fb000000100044006900730070006c006100790073010000003d00000222000000c900fffffffb0000000a00560069006500770073010000026500000176000000a400ffffff000005cd0000039e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Views:
+    collapsed: false
+  Width: 1920
+  X: 0
+  Y: 27
