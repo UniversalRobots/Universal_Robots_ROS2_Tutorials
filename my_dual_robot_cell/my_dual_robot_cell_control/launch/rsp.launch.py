@@ -1,7 +1,6 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
-from launch.substitutions import (Command, FindExecutable, LaunchConfiguration,
-                                  PathJoinSubstitution)
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
@@ -20,12 +19,8 @@ def generate_launch_description():
 
     headless_mode = LaunchConfiguration("headless_mode")
 
-    alice_kinematics_parameters_file = LaunchConfiguration(
-        "alice_kinematics_parameters_file"
-    )
-    bob_kinematics_parameters_file = LaunchConfiguration(
-        "bob_kinematics_parameters_file"
-    )
+    alice_kinematics_parameters_file = LaunchConfiguration("alice_kinematics_parameters_file")
+    bob_kinematics_parameters_file = LaunchConfiguration("bob_kinematics_parameters_file")
 
     robot_description_content = Command(
         [
