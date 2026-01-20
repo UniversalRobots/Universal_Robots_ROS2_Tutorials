@@ -51,7 +51,7 @@ Extract the calibration
 -----------------------
 
 One very important step is to extract the robot's specific calibration and save it to our
-workcell's startup package. For details, please refer to `our documentation on extracting the calibration information <https://docs.ros.org/en/ros2_packages/rolling/api/ur_robot_driver/installation/robot_setup.html#extract-calibration-information>`_.
+workcell's startup package. For details, please refer to `our documentation on extracting the calibration information <https://docs.ros.org/en/ros2_packages/rolling/api/ur_robot_driver/doc/installation/robot_setup.html#extract-calibration-information>`_.
 For now, we just copy the default one for the ur20.
 
 .. code-block::
