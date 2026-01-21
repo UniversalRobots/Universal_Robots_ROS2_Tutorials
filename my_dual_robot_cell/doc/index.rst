@@ -19,4 +19,8 @@ all files relevant for this example.
 
    assemble_urdf
    start_ur_driver
-   build_moveit_config
+
+MoveIt! Configuration
+---------------------
+For inspiration on how to configure MoveIt! 2 using the setup assistant, please see the `single arm robot cell tutorial
+<https://docs.universal-robots.com/Universal_Robots_ROS_Documentation/doc/ur_tutorials/my_robot_cell/doc/build_moveit_config.html>`_
