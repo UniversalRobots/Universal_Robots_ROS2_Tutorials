@@ -56,7 +56,7 @@ For now, we just copy the default ones for the UR3e and UR5e.
    cp $(ros2 pkg prefix ur_description)/share/ur_description/config/ur3e/default_kinematics.yaml \
      my_dual_robot_cell_control/config/alice_calibration.yaml
 
-    cp $(ros2 pkg prefix ur_description)/share/ur_description/config/ur5e/default_kinematics.yaml \
+   cp $(ros2 pkg prefix ur_description)/share/ur_description/config/ur5e/default_kinematics.yaml \
      my_dual_robot_cell_control/config/bob_calibration.yaml
 
 

@@ -7,7 +7,7 @@ The `ur_description <https://github.com/UniversalRobots/Universal_Robots_ROS2_De
 We'll use this to create a custom workcell with two robots in it, both a UR3e (called Alice) and a UR5e (called Bob). In this section we will only go into
 detail about the URDF / xacro files, not the complete package structure. Please see the
 `description package source code
-<https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/blob/main/my_robot_cell/my_robot_cell_description>`_ for all other files assembling the description package.
+<https://github.com/UniversalRobots/Universal_Robots_ROS2_Tutorials/blob/main/my_dual_robot_cell/my_dual_robot_cell_description>`_ for all other files assembling the description package.
 
 Workcell description
 --------------------
