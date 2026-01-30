@@ -14,3 +14,4 @@ Example tutorials
    :titlesonly:
 
    my_robot_cell/doc/index.rst
+   my_dual_robot_cell/doc/index.rst

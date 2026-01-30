@@ -86,7 +86,7 @@
     <joint name="base_to_alice_robot_mount" type="fixed">
       <parent link="table"/>
       <child link="alice_robot_mount"/>
-      <origin xyz="0.5 0.3 0" rpy="0 0 ${pi}" />
+      <origin xyz="0.2 0.3 0" rpy="0 0 ${pi}" />
     </joint>
 
     <link name="bob_robot_mount"/>

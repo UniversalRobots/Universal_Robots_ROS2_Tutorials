@@ -27,7 +27,7 @@ First, we'll have to **include** the macro to generate our custom workcell:
     :end-at:   <xacro:include filename="$(find my_robot_cell_description)/urdf/my_robot_cell_macro.xacro"/>
     :caption: my_robot_cell_description/urdf/my_robot_cell.urdf.xacro
 
-This line only loadeded the macro for generating the robot workcell.
+This line only loads the macro for generating the robot workcell.
 
 We will need to provide some parameters to our workcell in order to parametrize the arm. Therefore,
 we need to declare certain arguments that must be passed to the macro.
