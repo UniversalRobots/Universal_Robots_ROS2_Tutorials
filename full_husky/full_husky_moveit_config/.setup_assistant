@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: full_husky_description
+    relative_path: urdf/full_husky.urdf.xacro
+  srdf:
+    relative_path: config/full_husky.srdf
+  package_settings:
+    author_name: Sohaib Snouber
+    author_email: sohaibshehabsnouber@gmail.com
+    generated_timestamp: 1723460269
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

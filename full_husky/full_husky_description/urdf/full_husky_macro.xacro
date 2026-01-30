@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+
+  <xacro:include filename="$(find full_husky_description)/urdf/husky.urdf.xacro"/>
+
+  <xacro:macro name="full_husky" params="
+    parent
+    *origin
+    ur_type
+    joint_limits_parameters_file
+    kinematics_parameters_file
+    physical_parameters_file
+    visual_parameters_file
+    transmission_hw_interface
+    safety_limits
+    safety_pos_margin
+    safety_k_position
+    use_fake_hardware
+    fake_sensor_commands
+    sim_ignition
+    headless_mode
+    initial_positions
+    use_tool_communication
+    tool_voltage
+    tool_parity
+    tool_baud_rate
+    tool_stop_bits
+    tool_rx_idle_chars
+    tool_tx_idle_chars
+    tool_device_name
+    tool_tcp_port
+    robot_ip
+    script_filename
+    output_recipe_filename
+    input_recipe_filename
+    reverse_ip
+    script_command_port
+    reverse_port
+    script_sender_port
+    trajectory_port
+    ">
+
+    <!-- Joint connecting the husky to the parent link -->
+    <joint name="base_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="base_link" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+    
+    <xacro:husky/>
+
+    <!-- Definition of the robot mount link -->
+    <link name="robot_mount"/>
+    
+    <!-- Joint connecting the robot mount to the husky -->
+    <joint name="base_to_robot_mount" type="fixed">
+      <parent link="base_link"/>
+      <child link="robot_mount"/>
+      <origin xyz="-0.1 0 0.25" rpy="0 0 1.5707963268" />
+    </joint>
+    
+    <xacro:include filename="$(find robotiq_2f_140_gripper_visualization)/urdf/robotiq_arg2f_140_model_macro.xacro"/>
+
+    <!-- Define the joint connecting the wrist of the UR5e to the base link of the gripper -->
+    
+    <joint name="${ur_type}_tool0_to_gripper_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 ${pi/2}"/> 
+      <parent link="${ur_type}_tool0"/>
+      <child link="robotiq_arg2f_base_link"/> 
+    </joint>
+    
+    <xacro:robotiq_arg2f_140
+      prefix=""
+    >
+      
+    </xacro:robotiq_arg2f_140>
+
+    <!-- Instantiate the robot using the URDF macro -->
+    <xacro:ur_robot
+      name="${ur_type}"
+      tf_prefix="${ur_type}_"
+      parent="robot_mount"
+      joint_limits_parameters_file="${joint_limits_parameters_file}"
+      kinematics_parameters_file="${kinematics_parameters_file}"
+      physical_parameters_file="${physical_parameters_file}"
+      visual_parameters_file="${visual_parameters_file}"
+      transmission_hw_interface="${transmission_hw_interface}"
+      safety_limits="${safety_limits}"
+      safety_pos_margin="${safety_pos_margin}"
+      safety_k_position="${safety_k_position}"
+      use_fake_hardware="${use_fake_hardware}"
+      fake_sensor_commands="${fake_sensor_commands}"
+      sim_ignition="${sim_ignition}"
+      headless_mode="${headless_mode}"
+      initial_positions="${initial_positions}"
+      use_tool_communication="${use_tool_communication}"
+      tool_voltage="${tool_voltage}"
+      tool_parity="${tool_parity}"
+      tool_baud_rate="${tool_baud_rate}"
+      tool_stop_bits="${tool_stop_bits}"
+      tool_rx_idle_chars="${tool_rx_idle_chars}"
+      tool_tx_idle_chars="${tool_tx_idle_chars}"
+      tool_device_name="${tool_device_name}"
+      tool_tcp_port="${tool_tcp_port}"
+      robot_ip="${robot_ip}"
+      script_filename="${script_filename}"
+      output_recipe_filename="${output_recipe_filename}"
+      input_recipe_filename="${input_recipe_filename}"
+      reverse_ip="${reverse_ip}"
+      script_command_port="${script_command_port}"
+      reverse_port="${reverse_port}"
+      script_sender_port="${script_sender_port}"
+      trajectory_port="${trajectory_port}"
+    >
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </xacro:ur_robot>
+
+  </xacro:macro>
+</robot>
