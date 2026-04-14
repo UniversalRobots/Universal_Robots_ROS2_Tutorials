@@ -101,7 +101,7 @@ ramp-down parts of the trajectory.
 
 Please note that you could also change the default velocity and acceleration scaling in this file.
 Also, if you want to specify any limits (position or velocity) that differ from your description, you
-can set them here. Remember that does will only be used for planning trajectories, not necessarily
+can set them here. Remember that those will only be used for planning trajectories, not necessarily
 for execution. If you send trajectories from another source than MoveIt! those limits will not
 apply!
 
