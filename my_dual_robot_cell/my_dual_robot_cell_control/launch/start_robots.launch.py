@@ -396,14 +396,14 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "alice_initial_joint_controller",
-            default_value="alice_scaled_joint_trajectory_controller",
+            default_value="alice_joint_trajectory_controller",
             description="Initially loaded robot controller for the alice robot arm.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "bob_initial_joint_controller",
-            default_value="bob_scaled_joint_trajectory_controller",
+            default_value="bob_joint_trajectory_controller",
             description="Initially loaded robot controller for the bob robot arm.",
         )
     )

@@ -56,7 +56,7 @@ We'll skip setting up ros2_control related points, since we've already configure
 control package.
 
 In the **MoveIt Controllers** step we setup our desired controller to match the name
-"scaled_joint_trajectory_controller":
+"joint_trajectory_controller":
 
 .. image:: moveit_controllers.png
    :alt: MoveIt! coontrollers configuration

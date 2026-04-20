@@ -12,7 +12,7 @@ controller_manager:
     force_torque_sensor_broadcaster:
       type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
 
-    scaled_joint_trajectory_controller:
+    joint_trajectory_controller:
       type: ur_controllers/ScaledJointTrajectoryController
 
     forward_velocity_controller:
@@ -44,7 +44,7 @@ force_torque_sensor_broadcaster:
     frame_id: ur20_tool0
     topic_name: ft_data
 
-scaled_joint_trajectory_controller:
+joint_trajectory_controller:
   ros__parameters:
     joints:
       - ur20_shoulder_pan_joint
