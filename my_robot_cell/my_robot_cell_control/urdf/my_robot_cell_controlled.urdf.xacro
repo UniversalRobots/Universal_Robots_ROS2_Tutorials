@@ -39,6 +39,7 @@
   <xacro:ur_ros2_control
     name="$(arg ur_type)"
     tf_prefix="$(arg ur_type)_"
+    ur_type="$(arg ur_type)"
     kinematics_parameters_file="$(arg kinematics_parameters_file)"
     robot_ip="$(arg robot_ip)"
     script_filename="$(arg ur_script_filename)"
