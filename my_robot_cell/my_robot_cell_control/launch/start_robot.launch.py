@@ -18,6 +18,8 @@ from launch.substitutions import (
 def generate_launch_description():
     ur_type = LaunchConfiguration("ur_type")
     robot_ip = LaunchConfiguration("robot_ip")
+    launch_rviz = LaunchConfiguration("launch_rviz")
+    headless_mode = LaunchConfiguration("headless_mode")
     declared_arguments = []
     declared_arguments.append(
         DeclareLaunchArgument(
@@ -47,6 +49,14 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument("launch_rviz", default_value="true", description="Launch RViz?")
     )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "headless_mode",
+            default_value="false",
+            description="Run the driver in headless mode (no external_control program needs "
+            "to be running on the robot).",
+        )
+    )
 
     return LaunchDescription(
         declared_arguments
@@ -66,6 +76,8 @@ def generate_launch_description():
                 launch_arguments={
                     "ur_type": ur_type,
                     "robot_ip": robot_ip,
+                    "launch_rviz": launch_rviz,
+                    "headless_mode": headless_mode,
                     "tf_prefix": [LaunchConfiguration("ur_type"), "_"],
                     "rviz_config_file": PathJoinSubstitution(
                         [
