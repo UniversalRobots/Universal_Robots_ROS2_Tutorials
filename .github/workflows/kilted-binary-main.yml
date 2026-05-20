@@ -1,4 +1,4 @@
-name: Rolling Binary Testing
+name: Kilted Binary Main
 on:
   workflow_dispatch:
     branches:
@@ -13,9 +13,9 @@ on:
     - cron: '34 12 * * 0'
 
 jobs:
-  rolling_binary_testing:
+  kilted_binary_main:
     uses: ./.github/workflows/reusable_ici.yml
     with:
-      ros_distro: rolling
-      ros_repo: testing
+      ros_distro: kilted
+      ros_repo: main
       ref_for_scheduled_build: main

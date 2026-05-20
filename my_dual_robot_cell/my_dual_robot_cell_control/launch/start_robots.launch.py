@@ -157,6 +157,9 @@ def launch_setup():
         return Node(
             package="controller_manager",
             executable="spawner",
+            parameters=[
+                ParameterFile(controllers_file, allow_substs=True),
+            ],
             arguments=[
                 "--controller-manager",
                 "/controller_manager",
@@ -189,6 +192,9 @@ def launch_setup():
     alice_initial_joint_controller_spawner_started = Node(
         package="controller_manager",
         executable="spawner",
+        parameters=[
+            ParameterFile(controllers_file, allow_substs=True),
+        ],
         arguments=[
             alice_initial_joint_controller,
             "-c",
@@ -201,6 +207,9 @@ def launch_setup():
     bob_initial_joint_controller_spawner_started = Node(
         package="controller_manager",
         executable="spawner",
+        parameters=[
+            ParameterFile(controllers_file, allow_substs=True),
+        ],
         arguments=[
             bob_initial_joint_controller,
             "-c",
@@ -213,6 +222,9 @@ def launch_setup():
     alice_initial_joint_controller_spawner_stopped = Node(
         package="controller_manager",
         executable="spawner",
+        parameters=[
+            ParameterFile(controllers_file, allow_substs=True),
+        ],
         arguments=[
             alice_initial_joint_controller,
             "-c",
@@ -226,6 +238,9 @@ def launch_setup():
     bob_initial_joint_controller_spawner_stopped = Node(
         package="controller_manager",
         executable="spawner",
+        parameters=[
+            ParameterFile(controllers_file, allow_substs=True),
+        ],
         arguments=[
             bob_initial_joint_controller,
             "-c",
@@ -396,14 +411,14 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "alice_initial_joint_controller",
-            default_value="alice_scaled_joint_trajectory_controller",
+            default_value="alice_joint_trajectory_controller",
             description="Initially loaded robot controller for the alice robot arm.",
         )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
             "bob_initial_joint_controller",
-            default_value="bob_scaled_joint_trajectory_controller",
+            default_value="bob_joint_trajectory_controller",
             description="Initially loaded robot controller for the bob robot arm.",
         )
     )

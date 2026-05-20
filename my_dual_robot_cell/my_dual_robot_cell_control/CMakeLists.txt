@@ -8,4 +8,12 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+if(BUILD_TESTING)
+  find_package(launch_testing_ament_cmake REQUIRED)
+  add_launch_test(test/example_move.py
+    TIMEOUT
+      300
+  )
+endif()
+
 ament_package()

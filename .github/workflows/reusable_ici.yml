@@ -76,6 +76,8 @@ jobs:
           UPSTREAM_WORKSPACE: ${{ inputs.upstream_workspace }}
           ROS_DISTRO: ${{ inputs.ros_distro }}
           ROS_REPO: ${{ inputs.ros_repo }}
+          CMAKE_ARGS: -DMY_ROBOT_CELL_CONTROL_BUILD_INTEGRATION_TESTS=ON
+          ADDITIONAL_DEBS: docker.io netcat-openbsd curl  # Needed for integration tests
       - name: prepare target_ws for cache
         if: ${{ always() && ! matrix.env.CCOV }}
         run: |

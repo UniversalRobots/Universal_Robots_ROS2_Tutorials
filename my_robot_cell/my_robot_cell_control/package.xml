@@ -9,10 +9,9 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-
+  <exec_depend>forward_command_controller</exec_depend>
   <exec_depend>joint_state_broadcaster</exec_depend>
   <exec_depend>joint_trajectory_controller</exec_depend>
-  <exec_depend>position_controllers</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>my_robot_cell_description</exec_depend>
   <exec_depend>ur_controllers</exec_depend>
@@ -21,6 +20,9 @@
   <exec_depend>xacro</exec_depend>
   <exec_depend>controller_manager</exec_depend>
 
+  <test_depend>launch_testing_ament_cmake</test_depend>
+  <test_depend>ros2run</test_depend>
+  <test_depend>ur_dashboard_msgs</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

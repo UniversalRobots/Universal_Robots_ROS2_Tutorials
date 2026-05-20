@@ -62,6 +62,7 @@
 
   <xacro:ur_ros2_control
     name="alice"
+    ur_type="$(arg alice_ur_type)"
     tf_prefix="alice_"
     kinematics_parameters_file="$(arg alice_kinematics_parameters_file)"
     robot_ip="$(arg alice_robot_ip)"
@@ -79,6 +80,7 @@
 
   <xacro:ur_ros2_control
     name="bob"
+    ur_type="$(arg bob_ur_type)"
     tf_prefix="bob_"
     kinematics_parameters_file="$(arg bob_kinematics_parameters_file)"
     robot_ip="$(arg bob_robot_ip)"
