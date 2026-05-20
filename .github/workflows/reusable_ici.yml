@@ -37,6 +37,11 @@ on:
         default: '.work'
         required: false
         type: string
+      rosdep_skip_keys:
+        description: "Skip those keys when doing 'rosdep install'. space-separated list"
+        default: ''
+        required: false
+        type: string
 
 jobs:
   reusable_ici:
@@ -76,6 +81,7 @@ jobs:
           UPSTREAM_WORKSPACE: ${{ inputs.upstream_workspace }}
           ROS_DISTRO: ${{ inputs.ros_distro }}
           ROS_REPO: ${{ inputs.ros_repo }}
+          ROSDEP_SKIP_KEYS: ${{ inputs.rosdep_skip_keys }}
       - name: prepare target_ws for cache
         if: ${{ always() && ! matrix.env.CCOV }}
         run: |

@@ -19,3 +19,11 @@ jobs:
       ros_distro: lyrical
       ros_repo: main
       ref_for_scheduled_build: main
+      rosdep_skip_keys: >-
+        moveit_ros_move_group
+        moveit_kinematics
+        moveit_planners
+        moveit_simple_controller_manager
+        moveit_configs_utils
+        moveit_ros_visualization
+        moveit_setup_assistant
