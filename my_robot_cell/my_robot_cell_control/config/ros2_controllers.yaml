@@ -12,14 +12,14 @@ controller_manager:
     force_torque_sensor_broadcaster:
       type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
 
-    scaled_joint_trajectory_controller:
-      type: ur_controllers/ScaledJointTrajectoryController
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
 
     forward_velocity_controller:
-      type: velocity_controllers/JointGroupVelocityController
+      type: forward_command_controller/ForwardCommandController
 
     forward_position_controller:
-      type: position_controllers/JointGroupPositionController
+      type: forward_command_controller/ForwardCommandController
 
 
 speed_scaling_state_broadcaster:
@@ -44,7 +44,7 @@ force_torque_sensor_broadcaster:
     frame_id: ur20_tool0
     topic_name: ft_data
 
-scaled_joint_trajectory_controller:
+joint_trajectory_controller:
   ros__parameters:
     joints:
       - ur20_shoulder_pan_joint
@@ -70,7 +70,8 @@ scaled_joint_trajectory_controller:
       ur20_wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
       ur20_wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
       ur20_wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
-    speed_scaling_interface_name: ur20_speed_scaling/speed_scaling_factor
+    speed_scaling:
+      state_interface: ur20_speed_scaling/speed_scaling_factor
 
 forward_velocity_controller:
   ros__parameters:
@@ -92,3 +93,4 @@ forward_position_controller:
       - ur20_wrist_1_joint
       - ur20_wrist_2_joint
       - ur20_wrist_3_joint
+    interface_name: position

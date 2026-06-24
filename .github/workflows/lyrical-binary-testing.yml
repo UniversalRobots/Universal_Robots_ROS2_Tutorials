@@ -1,4 +1,4 @@
-name: Rolling Binary Main
+name: Lyrical Binary Testing
 on:
   workflow_dispatch:
     branches:
@@ -13,11 +13,11 @@ on:
     - cron: '34 12 * * 0'
 
 jobs:
-  rolling_binary_main:
+  lyrical_binary_testing:
     uses: ./.github/workflows/reusable_ici.yml
     with:
-      ros_distro: rolling
-      ros_repo: main
+      ros_distro: lyrical
+      ros_repo: testing
       ref_for_scheduled_build: main
       rosdep_skip_keys: >-
         moveit_ros_move_group

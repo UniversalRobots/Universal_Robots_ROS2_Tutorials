@@ -10,7 +10,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '34 12 * * *'
+    - cron: '34 12 * * 0'
 
 jobs:
   rolling_binary_testing:
@@ -19,3 +19,11 @@ jobs:
       ros_distro: rolling
       ros_repo: testing
       ref_for_scheduled_build: main
+      rosdep_skip_keys: >-
+        moveit_ros_move_group
+        moveit_kinematics
+        moveit_planners
+        moveit_simple_controller_manager
+        moveit_configs_utils
+        moveit_ros_visualization
+        moveit_setup_assistant
