@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>robotiq_2f_140_gripper_visualization</name>
+  <version>1.0.0</version>
+  <description>Robotiq ARG 2-Finger 140mm model C3 description package</description>
+  <url type="website">http://ros.org/wiki/robotiq</url>
+  <author email="ryan@rwsinnet.com">Ryan Sinnet</author>
+  <maintainer email="ros@robotiq.com">Jean-Philippe Roberge</maintainer>
+  <maintainer email="daniels.ordoez@gmail.com">Daniel Ordonez</maintainer>
+  <maintainer email="sohaibshehabsnouber@gmail.com">sohaib</maintainer>
+  <license>BSD</license>
+  
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <exec_depend>urdf</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
